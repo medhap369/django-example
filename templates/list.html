@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	List product
+{% endblock %}
+
+{% block content %}
+	<table class="table table-striped">
+  		<tr>
+  			<th>Name</th>
+  			<th>Status</th>
+  			<th>Action</th>
+  		</tr>	
+  		{% for p in products %}
+  			<tr>
+  				<td>{{ p.name }}</td>
+  				<td>{{ p.status }}</td>
+  				<td><a href='/edit?id={{p.id}}'>Edit</a> <a href='/del?id={{p.id}}'>Delete</a></td>
+  			</tr>
+  		{% endfor %}
+	</table>
+{% endblock %}
